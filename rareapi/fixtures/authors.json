@@ -1,0 +1,32 @@
+[
+    {
+        "model": "rareapi.author",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "bio": "Hey there! I'm a passionate writer, avid reader, and lover of all things creative. With a cup of steaming coffee in one hand and a notebook in the other, I find solace in the world of words. Born and raised in a small town nestled in the picturesque countryside, I developed a fascination for storytelling from an early age. My blog is a reflection of my eclectic interests, covering a wide range of topics including literature, travel, personal development, and everything in between. When I'm not glued to my laptop, you'll often find me exploring the great outdoors, seeking inspiration from nature's beauty. Life is a never-ending adventure, and I strive to capture its essence through my writing and share it with my readers.",
+            "created_on": "2023-03-30",
+            "active": true
+        }
+    },
+    {
+        "model": "rareapi.author",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "bio": "Greetings, fellow wanderers of the world! I'm an avid traveler, perpetual dreamer, and storyteller at heart. With a backpack on my shoulders and a map in hand, I set out on daring adventures to explore the far reaches of our beautiful planet. Through my blog, I aim to capture the essence of each destination, weaving tales of culture, breathtaking landscapes, and the fascinating people I encounter along the way. Join me as we embark on a virtual journey, seeking inspiration and wanderlust together.",
+            "created_on": "2023-03-25",
+            "active": true
+        }
+    },
+    {
+        "model": "rareapi.author",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "bio": "I'm a self-proclaimed gastronomic adventurer, constantly on the hunt for culinary treasures that tantalize the taste buds and ignite the senses. From Michelin-starred restaurants to hidden street food gems, I leave no stone unturned in my quest for delectable delights. On my blog, I share mouthwatering recipes, insider tips on dining experiences, and stories that celebrate the way food connects us all. Get ready to embark on a flavorful journey with me, exploring the vibrant world of gastronomy one bite at a time.",
+            "created_on": "2023-03-28",
+            "active": true
+        }
+    }
+]

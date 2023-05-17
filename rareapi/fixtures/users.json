@@ -1,0 +1,56 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "password",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "SunnyBoy",
+            "first_name": "Sunny",
+            "last_name": "Hughes",
+            "email": "sunny@hughes.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-03-30T14:51:39.989Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "password",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "PoppyGirl",
+            "first_name": "Poppy",
+            "last_name": "Filler",
+            "email": "poppy@filler.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-03-25T14:51:39.989Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 3,
+        "fields": {
+            "password": "password",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "LizLuvsBaths",
+            "first_name": "Elizabeth",
+            "last_name": "Bathory",
+            "email": "elizabeth@bathory.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-03-28T14:51:39.989Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

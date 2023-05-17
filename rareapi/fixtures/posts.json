@@ -1,0 +1,39 @@
+[
+    {
+        "model": "rareapi.post",
+        "pk": 1,
+        "fields": {
+            "author": 1,
+            "category": 2,
+            "title": "5 Essential Tips for Productivity",
+            "publication_date": "2023-04-11",
+            "image_url": "https://hips.hearstapps.com/womansday/assets/17/39/1506709524-cola-0247.jpg",
+            "content": "Boosting productivity is a common goal for many individuals. To make the most of your time and enhance efficiency, start by setting clear goals and prioritizing tasks. Eliminate distractions by creating a conducive work environment and managing your digital distractions. Incorporate breaks into your schedule to recharge and maintain focus. Implement effective time management techniques such as the Pomodoro Technique or time blocking. Finally, don't forget the importance of self-care and maintaining a healthy work-life balance. With these essential tips, you'll be on your way to accomplishing more in less time."
+        }
+    },
+    {
+        "model": "rareapi.post",
+        "pk": 2,
+        "fields": {
+            "author": 3,
+            "category": 1,
+            "title": "The Impact of Social Media on Mental Health",
+            "publication_date": "2023-04-28",
+            "image_url": "https://www.thevintagenews.com/wp-content/uploads/sites/65/2019/04/00tubwo9.jpg",
+            "content": "The rise of social media has transformed the way we connect and share information. However, it's crucial to acknowledge the impact it can have on mental health. Excessive social media use can lead to feelings of inadequacy, comparison, and low self-esteem. It's important to set healthy boundaries and practice digital detoxes to prioritize real-life connections and self-care. Actively curate your social media feeds to ensure they align with positive influences and limit exposure to negativity. Remember, balance is key in utilizing social media while safeguarding your mental well-being."
+        }
+    },
+    {
+        "model": "rareapi.post",
+        "pk": 3,
+        "fields": {
+            "author": 2,
+            "category": 3,
+            "title": "Exploring the Benefits of Meditation",
+            "publication_date": "2023-04-22",
+            "image_url": "https://images.ctfassets.net/ub3bwfd53mwy/6atCoddzStFzz0RcaztYCh/1c3e8a37eebe3c6a435038f8d9eef7f3/3_Image.jpg?w=750",
+            "content": "Meditation is a practice that offers numerous benefits for both the mind and body. By engaging in regular meditation, you can reduce stress levels, enhance mindfulness, and improve overall well-being. This ancient technique promotes relaxation, increases self-awareness, and cultivates a sense of inner peace. Incorporating meditation into your daily routine can improve focus, concentration, and creativity. Whether you choose guided meditation, mindfulness exercises, or silent sitting, exploring the world of meditation can lead to a calmer, more centered life."
+        }
+    }
+]
+
