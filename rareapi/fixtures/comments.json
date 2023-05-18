@@ -1,0 +1,32 @@
+[
+    {
+        "model": "rareapi.comment",
+        "pk": 1,
+        "fields": {
+            "post": 1,
+            "commenter": 2,
+            "content": "Great post! I found your insight really helpful and practical. Keep up the excellent work!",
+            "created_on": "2023-05-01"
+        }
+    },
+    {
+        "model": "rareapi.comment",
+        "pk": 2,
+        "fields": {
+            "post": 3,
+            "commenter": 1,
+            "content": "I really enjoyed reading your post. It was well-written and engaging. The info you provided was spot-on and something I can easily implement in my own!" ,
+            "created_on": "2023-05-05"
+        }
+    },
+    {
+        "model": "rareapi.comment",
+        "pk": 3,
+        "fields": {
+            "post": 2,
+            "commenter": 3,
+            "content": "Thank you for sharing this valuable information. Your blog is always a go-to resource for me when I need advice & inspo.",
+            "created_on": "2023-04-30"
+        }
+    }
+]

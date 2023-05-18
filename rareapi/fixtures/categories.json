@@ -1,0 +1,23 @@
+[
+    {
+        "model": "rareapi.category",
+        "pk": 1,
+        "fields": {
+            "label": "Health"
+        }
+    },
+    {
+        "model": "rareapi.category",
+        "pk": 2,
+        "fields": {
+            "label": "Technology"
+        }
+    },
+    {
+        "model": "rareapi.category",
+        "pk": 3,
+        "fields": {
+            "label": "Travel"
+        }
+    }
+]
