@@ -1,19 +1,23 @@
 [
     {
         "model": "authtoken.token",
-        "pk": "xz2eba9be8282d595c997ee5cd49f2ed31f65bed",
+        "pk": "06787add96eb3264080015997720cb0877b40f90",
         "fields": {
             "user": 1,
             "created": "2023-03-30T14:51:39.989Z"
-        },
+        }
+    },
+    {
         "model": "authtoken.token",
-        "pk": "da2eba9be8282d595c997ee5cd49f2ed31f65daf",
+        "pk": "8b44b69d17de6e7e81bede339e8fd997369f8819",
         "fields": {
             "user": 2,
             "created": "2023-03-25T14:51:39.989Z"
-        },
+        }
+    },
+    {
         "model": "authtoken.token",
-        "pk": "rf2eba9be8282d595c997ee5cd49f2ed31f65rih",
+        "pk": "d74b97fbe905134520bb236b0016703f50380dcf",
         "fields": {
             "user": 3,
             "created": "2023-03-28T14:51:39.989Z"
