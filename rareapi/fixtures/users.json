@@ -10,7 +10,7 @@
             "first_name": "Bryan",
             "last_name": "Nilson",
             "email": "bryan@nilson.com",
-            "is_staff": false,
+            "is_staff": true,
             "is_active": true,
             "date_joined": "2023-03-30T14:51:39.989Z",
             "groups": [],
