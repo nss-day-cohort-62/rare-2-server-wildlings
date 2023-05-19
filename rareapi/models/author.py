@@ -5,7 +5,7 @@ class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.CharField(max_length=155)
     created_on = models.DateField()
-    active = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
 
     @property # decorator
     def full_name(self):

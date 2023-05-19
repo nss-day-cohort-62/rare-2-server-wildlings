@@ -8,8 +8,8 @@ from rareapi.models import Author
 class AuthorView(ViewSet):
     """Rare Author view"""
     def list(self, request):
-        categories = Author.objects.all()
-        serializer = AuthorSerializer(categories, many=True)
+        authors = Author.objects.all()
+        serializer = AuthorSerializer(authors, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def retrieve(self, request, pk):
@@ -17,8 +17,8 @@ class AuthorView(ViewSet):
         serializer = AuthorSerializer(author)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-class AuthorSerializer(serializers.Serializer):
+class AuthorSerializer(serializers.ModelSerializer):
     """JSON serializer for authors"""
     class Meta:
         model = Author
-        fields = ('id', 'label')
+        fields = ('id', 'full_name', 'bio', 'created_on', 'active')
