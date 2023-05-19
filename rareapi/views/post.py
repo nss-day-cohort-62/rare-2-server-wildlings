@@ -5,8 +5,10 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from rareapi.models import Post, Author
 
+
 class PostView(ViewSet):
     """Rare Post view"""
+
     def list(self, request):
         posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True)
@@ -39,13 +41,17 @@ class PostView(ViewSet):
         post.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'category', 'title', 'publication_date', 'image_url', 'content')
+        fields = ('id', 'category', 'title',
+                  'publication_date', 'image_url', 'content')
 
-class PostSerializer(serializers.Serializer):
+
+class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for Posts"""
     class Meta:
         model = Post
-        fields = ('id', 'author', 'category', 'title', 'publication_date', 'image_url', 'content')
+        fields = ('id', 'author', 'category', 'title',
+                  'publication_date', 'image_url', 'content')
