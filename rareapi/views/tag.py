@@ -22,6 +22,13 @@ class TagView(ViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+    def update(self, request, pk):
+        tag = Tag.objects.get(pk=pk)
+        tag.label = request.data["label"]
+        tag.save()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
 
 class CreateTagSerializer(serializers.ModelSerializer):
     class Meta:
