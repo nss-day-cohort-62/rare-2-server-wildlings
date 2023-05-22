@@ -16,9 +16,22 @@ class CategoryView(ViewSet):
         category = Category.objects.get(pk=pk)
         serializer = CategorySerializer(category)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+    def create(self, request):
+        serializer = CreateCategorySerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
 
-class CategorySerializer(serializers.Serializer):
+
+class CategorySerializer(serializers.ModelSerializer):
     """JSON serializer for categories"""
+    class Meta:
+        model = Category
+        fields = ('id', 'label')
+
+class CreateCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ('id', 'label')
