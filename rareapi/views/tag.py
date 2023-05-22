@@ -8,8 +8,8 @@ from rareapi.models import Tag
 class TagView(ViewSet):
     """Rare Tag view"""
     def list(self, request):
-        categories = Tag.objects.all()
-        serializer = TagSerializer(categories, many=True)
+        tags = Tag.objects.all()
+        serializer = TagSerializer(tags, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def retrieve(self, request, pk):
@@ -28,7 +28,7 @@ class CreateTagSerializer(serializers.ModelSerializer):
         model = Tag
         fields = ('id', 'label')
 
-class TagSerializer(serializers.Serializer):
+class TagSerializer(serializers.ModelSerializer):
     """JSON serializer for tags"""
     class Meta:
         model = Tag
