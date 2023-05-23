@@ -13,7 +13,7 @@ class PostView(ViewSet):
         posts = Post.objects.all()
         author = Author.objects.get(user=request.auth.user)
         poster = request.query_params.get('_user', None)
-        
+
         if poster is not None:
             posts = posts.filter(author_id=author.id)
 
@@ -55,9 +55,26 @@ class CreatePostSerializer(serializers.ModelSerializer):
                   'publication_date', 'image_url', 'content')
 
 
+class PostAuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = ('full_name',)
+
+
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for Posts"""
+
+    author = PostAuthorSerializer(many=False)
+
     class Meta:
         model = Post
-        fields = ('id', 'author', 'category', 'title',
-                  'publication_date', 'image_url', 'content')
+        fields = (
+            'id',
+            'author',
+            'category',
+            'title',
+            'publication_date',
+            'image_url',
+            'content'
+        )
+        depth = 1
