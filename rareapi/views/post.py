@@ -35,10 +35,10 @@ class PostView(ViewSet):
 
     def update(self, request, pk):
         post = Post.objects.get(pk=pk)
-        post.category = request.data["category"]
+        post.category = Category.objects.get(pk=request.data["category_id"])
         post.title = request.data["title"]
         post.publication_date = request.data["publication_date"]
-        post.image_url = request.data["image_url"]
+        # post.image_url = request.data["image_url"]
         post.content = request.data["content"]
         post.save()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
