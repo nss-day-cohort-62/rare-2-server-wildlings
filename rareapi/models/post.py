@@ -7,3 +7,5 @@ class Post(models.Model):
     publication_date = models.DateField()
     image_url = models.CharField(max_length=1000000)
     content = models.CharField(max_length=250)
+    tags = models.ManyToManyField("Tag", related_name="tagged_posts")
+
