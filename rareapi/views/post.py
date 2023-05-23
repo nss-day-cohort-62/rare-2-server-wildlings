@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from rareapi.models import Post, Author
+from rareapi.models import Post, Author, Category
 
 
 class PostView(ViewSet):
@@ -21,17 +21,18 @@ class PostView(ViewSet):
 
     def create(self, request):
         author = Author.objects.get(user=request.auth.user)
+        category = Category.objects.get(pk=request.data["category_id"])
         serializer = CreatePostSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        serializer.save(author=author)
+        serializer.save(author=author, category=category)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     def update(self, request, pk):
         post = Post.objects.get(pk=pk)
-        post.category = request.data["category"]
+        post.category = Category.objects.get(pk=request.data["category_id"])
         post.title = request.data["title"]
         post.publication_date = request.data["publication_date"]
-        post.image_url = request.data["image_url"]
+        # post.image_url = request.data["image_url"]
         post.content = request.data["content"]
         post.save()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
@@ -45,8 +46,13 @@ class PostView(ViewSet):
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'category', 'title',
-                  'publication_date', 'image_url', 'content')
+        fields = (
+            'id',
+            'title',
+            'publication_date',
+            'image_url',
+            'content'
+        )
 
 
 class PostSerializer(serializers.ModelSerializer):
