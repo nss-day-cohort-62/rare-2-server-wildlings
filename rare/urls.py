@@ -26,6 +26,7 @@ router.register(r'authors', AuthorView, 'author')
 router.register(r'tags', TagView, 'tag')
 router.register(r'categories', CategoryView, 'category')
 router.register(r'my_posts', PostView, 'my_post')
+router.register(r'new_post', PostView, 'new_post')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
