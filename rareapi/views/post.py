@@ -3,7 +3,8 @@ from django.core.exceptions import ValidationError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from rareapi.models import Post, Author, Category
+from rareapi.models import Post, Author, Category, Tag
+from rest_framework.decorators import action
 
 
 class PostView(ViewSet):
@@ -40,6 +41,7 @@ class PostView(ViewSet):
         post.publication_date = request.data["publication_date"]
         # post.image_url = request.data["image_url"]
         post.content = request.data["content"]
+        post.tags.set(request.data["tags"])
         post.save()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
@@ -48,6 +50,23 @@ class PostView(ViewSet):
         post.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
+    @action(methods=['post'], detail=True)
+    def tag_post(self, request, pk):
+        """Post request for a user to sign up for an event"""
+    
+        tag = Tag.objects.get(request.data['tag']['id'])
+        post = Post.objects.get(pk=pk)
+        post.tags.add(tag)
+        return Response({'message': 'Tagged'}, status=status.HTTP_201_CREATED)
+    
+    @action(methods=['delete'], detail=True)
+    def untag_post(self, request, pk):
+        """Post request for a user to sign up for an event"""
+    
+        tag = Tag.objects.get(request.data['tag']['id'])
+        post = Post.objects.get(pk=pk)
+        post.tags.remove(tag)
+        return Response({'message': 'Untagged'}, status=status.HTTP_204_NO_CONTENT)
 
 class CreatePostSerializer(serializers.ModelSerializer):
     class Meta:
@@ -57,30 +76,20 @@ class CreatePostSerializer(serializers.ModelSerializer):
             'title',
             'publication_date',
             'image_url',
-            'content'
+            'content',
+            'tags'
         )
 
-
-class PostAuthorSerializer(serializers.ModelSerializer):
+class TagSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Author
-        fields = ('full_name',)
-
+        model = Tag
+        fields = ('id', 'label')
 
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for Posts"""
-
-    author = PostAuthorSerializer(many=False)
-
+    tags = TagSerializer(many=True, read_only=True)
     class Meta:
         model = Post
-        fields = (
-            'id',
-            'author',
-            'category',
-            'title',
-            'publication_date',
-            'image_url',
-            'content'
-        )
-        depth = 1
+        fields = ('id', 'author', 'category', 'title',
+                  'publication_date', 'image_url', 'content', 'tags')
+        depth= 1
