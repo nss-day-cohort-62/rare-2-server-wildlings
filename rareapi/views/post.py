@@ -12,6 +12,12 @@ class PostView(ViewSet):
 
     def list(self, request):
         posts = Post.objects.all()
+        author = Author.objects.get(user=request.auth.user)
+        poster = request.query_params.get('_user', None)
+
+        if poster is not None:
+            posts = posts.filter(author_id=author.id)
+
         serializer = PostSerializer(posts, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
